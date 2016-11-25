@@ -1,0 +1,19 @@
+{
+  "name": "anr",
+  "version": "1.0.0",
+  "description": "ANR CRUD",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibelem/pmd.git"
+  },
+  "author": "belem",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ibelem/pmd/issues"
+  },
+  "homepage": "https://github.com/ibelem/pmd#readme"
+}
