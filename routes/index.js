@@ -25,8 +25,9 @@ router.get('/', async function (ctx, next) {
     hello: 'vvvvv',
     time: gettime()
   };
-
   await ctx.render('index', {
   });
+
+
 })
 module.exports = router;

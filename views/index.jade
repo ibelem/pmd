@@ -3,8 +3,8 @@ extends layout
 block content
   h1= title
   p Welcome to #{hello}
-  form(method="post" id='md')
-    input(type='text' id='title' name='title' value='///')
+  form(method="post" id='md' action='create')
+    input(type='text' id='title' name='title' value='')
     input(type='text' id='time' name='time' value='#{time}')
     input(type='text' id='tags' name='tags' value='Life')
     input(type='text' id='categories' name='categories' value='日志')
