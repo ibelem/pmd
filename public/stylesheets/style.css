@@ -1,0 +1,12 @@
+body {
+  margin: 10px auto;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+textarea {height: 40%; width: 98%; margin:0px 10px;}
+
+input { display: block; margin:10px; width: 98%; height: 32px;}

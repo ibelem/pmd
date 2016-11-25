@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{hello}
+  form(method="post" id='md')
+    input(type='text' id='title' name='title' value='///')
+    input(type='text' id='time' name='time' value='#{time}')
+    input(type='text' id='tags' name='tags' value='Life')
+    input(type='text' id='categories' name='categories' value='日志')
+    input(type='text' id='cover' name='cover' value='/images/zephyr-bg.jpg')
+    textarea(id='article' name='article' rows='20')
+    input(type='submit', value='Submit')
+     
+    
+
+  
