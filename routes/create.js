@@ -55,7 +55,7 @@ router.post('/', async function (ctx, next) {
   let verify = ctx.request.body.verify || ''
   let article = ctx.request.body.article || ''
 
-  if (verify != '494460') {
+  if (verify != 'veritas') {
     ctx.body = "you post data:" + JSON.stringify({
       title: title,
     })
@@ -82,7 +82,7 @@ router.post('/', async function (ctx, next) {
       cover: cover,
       article: article
     }
-    
+
     await createMD(title, time, tags, categories, cover, article)
 
   }
