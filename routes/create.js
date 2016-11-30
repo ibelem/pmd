@@ -5,11 +5,10 @@ let fs = require('fs')
 let getDateTime = function () {
   let date = new Date()
   return date.getFullYear() + '' + date.getMonth() + date.getDate() + date.getHours() + date.getMinutes()
-   
+
 }
 
-let createMD = function (title, time, tags, categories, cover, verify, article) {
-
+let createMD = function (title, time, tags, categories, cover, article) {
   let tagstring = ''
   if (tags.indexOf(',') > -1) {
     let tagsplit = tags.split(',')
@@ -23,15 +22,11 @@ let createMD = function (title, time, tags, categories, cover, verify, article) 
     tagstring = '- ' + tags + '\r\n'
   }
 
-  console.log('00000000000' + article)
-
   let data = 'title:' + title + '\r\n' +
     'date:' + time + '\r\n' +
     'tags:\r\n' + tagstring + 'categories:\r\n' +
     '- ' + categories + '\r\n' + 'cover: ' + cover + '\r\n' +
     '---' + '\r\n' + article
-
-  // /var/www/anr.io/source/_posts/
 
   let writerStream = fs.createWriteStream('/home/belem/Desktop/tmp/' + getDateTime() + '.md')
   writerStream.write(data, 'UTF8')
@@ -55,16 +50,14 @@ router.post('/', async function (ctx, next) {
   let verify = ctx.request.body.verify || ''
   let article = ctx.request.body.article || ''
 
-  if (verify != 'veritas') {
+  if (verify != 'chn') {
     ctx.body = "you post data:" + JSON.stringify({
       title: title,
     })
-
     ctx.state = {
       title: title + ': Are you kidding me?'
     }
   } else {
-
     ctx.body = "you post data:" + JSON.stringify({
       title: title,
       time: time,
@@ -73,7 +66,6 @@ router.post('/', async function (ctx, next) {
       cover: cover,
       article: article
     })
-
     ctx.state = {
       title: title,
       time: time,
@@ -82,14 +74,9 @@ router.post('/', async function (ctx, next) {
       cover: cover,
       article: article
     }
-
-    await createMD(title, time, tags, categories, cover, article)
-
+    createMD(title, time, tags, categories, cover, article)
   }
-
   await ctx.render('create', {})
-
-
 })
 
 module.exports = router
