@@ -10,7 +10,10 @@ a {
   color: #00B7FF;
 }
 
-input { display: inline-block; width: 98%; margin:2px auto; padding: 0px 4px; height: 32px;border: 1px solid #ccc;border-radius: 5px;}
-textarea {height: 30%; min-width: 80%; display: inline-block;  margin: 5px auto; border: 1px solid #ccc; border-radius: 5px;}
+h4 { margin: 10px auto; }
+
+input { display: inline-block; width: 42%; margin:2px auto; padding: 0px; height: 32px; padding: 0px 10px; border: 1px solid #ccc;border-radius: 3px;}
+#title, #tags, #cover {margin-right: 6px; margin-bottom: 4px; }
+textarea {height: 30%; min-width: 80%; display: inline-block;  margin: 6px auto; border: 1px solid #ccc; border-radius: 3px;}
 input[type='submit'] {background-color: rgba(255, 255, 255, 0.9);  min-width: 80%; display: inline-block; width: 98%; }
 input[type='submit']:hover {background-color: rgba(0, 0, 0, 0.1)}

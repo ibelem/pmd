@@ -3,14 +3,14 @@ extends layout
 block content
   h4= title
   form(method="post" id='md' action='create')
-    input(type='text' id='title' name='title' value='belem')
+    input(type='text' id='title' name='title' value='')
     input(type='text' id='time' name='time' value='#{time}')
-    input(type='text' id='tags' name='tags' value='Life, Life')
+    input(type='text' id='tags' name='tags' value='Life')
     input(type='text' id='categories' name='categories' value='日志')
-    input(type='text' id='cover' name='cover' value='/images/winter2-bg.jpg forbiddencity-bg.jpg')
-    input(type='text' id='verify' name='verify' value='000000')
-    textarea(id='article' name='article' rows='20') <!--more-->
-    script(type='text/javascript') var simplemde = new SimpleMDE({ element: document.getElementById('article') })
+    input(type='text' id='cover' name='cover' value='/images/winter2-bg.jpg')
+    input(type='text' id='verify' name='verify' value='<!--more-->')
+    textarea(id='article' name='article' rows='16')
+    script(type='text/javascript') var simplemde = new SimpleMDE({ element: document.getElementById('article'), hideIcons: 'guide' })
     input(type='submit', value='Submit')
 
     

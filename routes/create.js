@@ -22,13 +22,13 @@ let createMD = function (title, time, tags, categories, cover, article) {
     tagstring = '- ' + tags + '\r\n'
   }
 
-  let data = 'title:' + title + '\r\n' +
-    'date:' + time + '\r\n' +
+  let data = 'title: "' + title + '"\r\n' +
+    'date: ' + time + '\r\n' +
     'tags:\r\n' + tagstring + 'categories:\r\n' +
     '- ' + categories + '\r\n' + 'cover: ' + cover + '\r\n' +
     '---' + '\r\n' + article
 
-  let writerStream = fs.createWriteStream('/home/belem/Desktop/tmp/' + getDateTime() + '.md')
+  let writerStream = fs.createWriteStream('/pathto/source/_posts/' + getDateTime() + '.md')
   writerStream.write(data, 'UTF8')
   writerStream.end()
 
